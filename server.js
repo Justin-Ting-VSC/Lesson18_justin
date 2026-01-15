@@ -30,7 +30,7 @@ app.listen(port, () => {
 app.get('/allcontact', async (req, res) => {
     try{
         let connection = await mysql.createConnection(dbConfig);
-        const [rows] = await connection.execute('SELECT * FROM defaultdb.cards');
+        const [rows] = await connection.execute('SELECT * FROM defaultdb.contact');
         res.json(rows);
     } catch(err) {
         console.error(err);
