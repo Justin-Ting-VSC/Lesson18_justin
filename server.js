@@ -27,14 +27,14 @@ app.listen(port, () => {
 });
 
 //Example Route: Get all cards
-app.get('/allcards', async (req, res) => {
+app.get('/allcontact', async (req, res) => {
     try{
         let connection = await mysql.createConnection(dbConfig);
         const [rows] = await connection.execute('SELECT * FROM defaultdb.cards');
         res.json(rows);
     } catch(err) {
         console.error(err);
-        res.status(500).json({message: 'Server error for allcards'});
+        res.status(500).json({message: 'Server error for allcontact'});
     }
 });
 
